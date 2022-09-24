@@ -25,6 +25,9 @@ $resultado = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <h1>Registrar Clientes</h1>
         <a href="nuevo-cliente.php" class="btn btn-secondary">Nuevo</a>
+        
+        <a href="listar-cliente.php" class="btn btn-secondary">Listar</a>
+
         <table class="table">
             <thead>
                 <tr>
