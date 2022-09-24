@@ -27,31 +27,28 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                  exit;
              }   
              
-             //PARA INSERTAR LOS DATOS//
+        
              $sql = "SELECT * FROM cliente WHERE id = $id";  
              $resultado =$db->query($sql);               
                     
              
-             
-             //PARA EL CASO DE TIPO_CLIENTE 
+         
              $sql = "SELECT * FROM  tipo_cliente";      
-             $resultado =$db->query($sql);  
+             $resultado = $db->query($sql);  
              $tipos_cliente = [];                       
              while($tipo = $resultado->fetch()){  
              $tipos_cliente[] = $tipo;                  
              }                                          
                                                                    
-                                                        
-             ////PARA EL CASO DE TIPO_DOCUMENTO
+                                                     
+           
              $sql = "SELECT * FROM tipo_documento";
              $resultado = $db->query($sql);          
              $tipos_documento = [];                     
              while($tipo = $resultado->fetch()){  
                  $tipos_documento[] = $tipo;            
-                 }                                      
-             
-
-foreach($resultado as $cliente):
+                 }
+                 foreach($resultado as $cliente):
 ?>
 
 <!DOCTYPE html>
@@ -134,9 +131,9 @@ foreach($resultado as $cliente):
 
             <input type="submit" value="Grabar" class="btn btn-primary">
         </form>
-        <?php
-        endforeach;
-        ?>
+ <?php
+ endforeach
+ ?>
     </div>
 </body>
 
